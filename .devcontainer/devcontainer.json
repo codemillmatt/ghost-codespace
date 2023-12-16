@@ -3,15 +3,15 @@
 {
 	"name": "Ghost Dev Container",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "ghost:latest",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:bullseye",
 
-	// "features": {
-	// 	"ghcr.io/devcontainers/features/docker-in-docker:2": {
-	// 		"version": "latest",
-	// 		"enableNonRootDocker": "true",
-	// 		"moby": "true"
-	// 	}
-	// },
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest",
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
