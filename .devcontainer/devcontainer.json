@@ -18,8 +18,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postStartCommand": [
-		"docker --version > postStartCommand.log",
-		"docker pull ghost:latest >> postStartCommand.log"
+		"docker pull ghost:latest"
 	],
 	// Configure tool-specific properties.
 	"customizations": {
