@@ -3,8 +3,8 @@
 {
 	"name": "Ghost Dev Container",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:bullseye",
-
+	// "image": "mcr.microsoft.com/devcontainers/javascript-node:bullseye",
+	"dockerComposeFile": "docker-compose.yml",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
@@ -17,9 +17,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postStartCommand": [
-		"docker pull ghost:latest"
-	],
+	"postCreateCommand": "./init.sh",
+	
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
