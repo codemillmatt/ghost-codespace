@@ -18,10 +18,10 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": [
-		"until docker info; do sleep 1; done",
-		"docker --version",
-		"docker pull ghost:latest",
-		"docker run -d --name some-ghost -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 ghost"
+		"until docker info > postCreateCommand.log; do sleep 1; done",
+		"docker --version >> postCreateCommand.log",
+		"docker pull ghost:latest >> postCommitCommand.log",
+		"docker run -d --name some-ghost -e NODE_ENV=development -e url=http://localhost:3001 -p 3001:2368 ghost >> postCreateCommand.log"
 	],
 
 	// Configure tool-specific properties.
