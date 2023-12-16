@@ -18,6 +18,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": [
+		"dockerd",
 		"until docker info > postCreateCommand.log; do sleep 1; done",
 		"docker --version >> postCreateCommand.log",
 		"docker pull ghost:latest >> postCommitCommand.log",
