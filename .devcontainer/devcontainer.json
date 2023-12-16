@@ -3,8 +3,8 @@
 {
 	"name": "Ghost Dev Container",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	// "image": "mcr.microsoft.com/devcontainers/javascript-node:bullseye",
-	"dockerComposeFile": "docker-compose.yml",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:bullseye",
+	//"dockerComposeFile": "docker-compose.yml",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
@@ -14,10 +14,10 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [3001],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "./init.sh",
+	"postCreateCommand": "/bin/bash ./init.sh",
 	
 	// Configure tool-specific properties.
 	"customizations": {
